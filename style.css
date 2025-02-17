@@ -33,12 +33,24 @@ img {
     height: auto; /* Maintain aspect ratio */
 }
 
+#button {
+    background-color: rgb(177, 0, 147);
+    color: rgb(186, 233, 255);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    font-family: "Lilita One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
 /* DESKTOP STYLES */
 @media (min-width: 700px) {
     .h2-container {
         flex-direction: row;
         justify-content: space-between; /* Spread columns across the page */
         width: 100%; 
+        image-orientation: center;
     }
    
     .column {
