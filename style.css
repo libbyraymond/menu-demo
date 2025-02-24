@@ -1,60 +1,109 @@
-h1, h2, h3, h4, h5 {
-    text-align: center;
+/* Typography */
+h2, h3, h4, h5 {
     font-family: "Lilita One", serif;
     font-weight: 400;
     font-style: normal;
+    text-align: center;
 }
 
+/* Colors */
+:root {
+    --primary-blue: rgb(0, 133, 177);
+    --light-blue: rgb(186, 233, 255);
+    --primary-pink: rgb(177, 0, 147);
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --transition-speed: 0.3s;
+    --banner-height: 120px;
+}
+
+/* Banner styles */
+h1 {
+    margin: 0;
+    padding: 30px 20px;
+    background: linear-gradient(
+        to right,
+        rgba(19, 176, 228, 0.95),
+        rgba(0, 41, 177, 0.95)
+    );
+    color: var(--light-blue);
+    font-family: "Lilita One", serif;
+    font-weight: 400;
+    text-align: center;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px var(--shadow-color);
+    position: relative;
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+
+/* Body styles */
 body {
-    background-image: url('confetti.jpeg'); /* Replace with your image path */
-    background-size: cover; /* Cover the entire background */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Prevent background image from repeating */
+    background-image: url('confetti.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--light-blue);
 }
 
-.column {
-    color: rgb(186, 233, 255);
-    background-color: rgb(0, 133, 177);
-    border-radius: 10px; /* Rounded corners */
-    padding: 10px; /* Indent text */
-    margin: 10px; /* Space between boxes */
-    flex: 1;
-}
-
+/* container components */
 .h2-container {
     display: flex;
-    justify-content: center; /* Center the columns */
-    flex-direction: column; /* Stack columns by default */
+    justify-content: center;
+    flex-direction: column;
 }
 
-img {
-    image-orientation: center;
-    width: 200px; /* Set the desired width */
-    height: auto; /* Maintain aspect ratio */
-}
 
-#button {
-    background-color: rgb(177, 0, 147);
-    color: rgb(186, 233, 255);
-    border-radius: 10px;
-    padding: 10px;
+.column {
+    flex: 1;
+    padding: 25px;
     margin: 10px;
-    cursor: pointer;
+    color: var(--light-blue);
+    background-color: rgba(0, 41, 177, 0.95);
+    border-radius: 15px;
+}
+
+/* Images */
+img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Button */
+#button {
     font-family: "Lilita One", serif;
     font-weight: 400;
     font-style: normal;
+    padding: 10px;
+    margin: 10px;
+    color: rgb(186, 233, 255);
+    background-color: rgb(177, 0, 147);
+    border-radius: 10px;
+    cursor: pointer;
 }
-/* DESKTOP STYLES */
+
+#button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px var(--shadow-color);
+    background-color: rgb(197, 0, 167);
+}
+
+#button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+/* Desktop styles */
 @media (min-width: 700px) {
     .h2-container {
         flex-direction: row;
-        justify-content: space-between; /* Spread columns across the page */
-        width: 100%; 
-        image-orientation: center;
+        justify-content: space-between;
+        width: 100%;
     }
-   
+
     .column {
         flex: 1;
-        margin: 10px; /* Space between boxes */
+        margin: 10px;
     }
 }
